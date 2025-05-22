@@ -1,0 +1,17 @@
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    position: relative;
+    width: 40%;
+    height: 42px;
+    background-image: url("../../image/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
