@@ -4,6 +4,10 @@ body {
     flex-direction: column;
 }
 
+.main_color {
+    background-color: #333 !important;
+}
+
 #menuToggle {
     display: block;
     /* You can also use relative/absolute here if you want to stay on the top */
@@ -117,7 +121,7 @@ body {
     padding-top: 125px;
     box-sizing: border-box;
     overflow-y: auto;
-    background: #9f9f9f;
+    background: #686868;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
@@ -207,18 +211,6 @@ body {
 #love {
     font-size: 0.5em;
     margin: 0;
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
-}
-
-p {
-    color: #666;
-    text-align: center;
-    margin: 10px 0;
 }
 
 footer {
