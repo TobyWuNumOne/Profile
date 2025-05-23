@@ -160,7 +160,7 @@ body {
     position: relative;
     width: 40%;
     height: 42px;
-    background-image: url("../../image/logo.png");
+    background-image: url("../image/logo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -186,7 +186,7 @@ body {
 }
 
 .fig_font {
-    font-size: 0.5em;
+    font-size: 0.7em;
     color: #666;
 }
 
@@ -218,4 +218,65 @@ footer {
     padding: 8px 0 8px 0;
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
+}
+
+/* Profile Header modern style */
+
+.main-profile {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding: 32px 0;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    background: url('../image/IMG_8911.JPG') center;
+    background-position: center 0px;
+    background-size: cover;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.profile-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #2f2f2f;
+    padding: 5px 10px;
+    margin-left: 24px;
+
+}
+
+.username {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+
+.page-title {
+    color: #bbb;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .main-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px 0;
+        align-items: center;
+    }
+
+    .profile-names {
+        margin-left: 0;
+        margin-top: 12px;
+        border-radius: 0 0 20px 20px;
+        padding: 10px 16px;
+    }
+
+    .profile-header {
+        border-radius: 20px 20px 0 0;
+    }
 }
