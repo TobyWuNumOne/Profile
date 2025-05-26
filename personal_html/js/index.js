@@ -1,7 +1,7 @@
 (function () {
     const N = 600; // total dots
-    const SIZE = 400; // SVG px
-    const DOT_RADIUS = 2; // px
+    const SIZE = 200; // SVG px
+    const DOT_RADIUS = 1; // px
     const MARGIN = 2; // px padding
     const DURATION = 3; // seconds per pulse cycle
     const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // 2π/φ²
@@ -10,6 +10,7 @@
     const svgNS = "http://www.w3.org/2000/svg";
     // Create SVG root
     const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("id", "creative-spiral");
     svg.setAttribute("width", SIZE);
     svg.setAttribute("height", SIZE);
     svg.setAttribute("viewBox", `0 0 ${SIZE} ${SIZE}`);

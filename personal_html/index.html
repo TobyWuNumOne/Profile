@@ -14,6 +14,27 @@
 <body>
     <nav class="nav_bar">
         <div class="logo"></div>
+        <div id="menuToggle">
+            <input type="checkbox" id="menuCheckbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <a href="//taizanthebar.com">
+                        <label for="menuCheckbox" onclick="this.parentNode.click();">Home</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="//personal.taizanthebar.com">
+                        <label for="menuCheckbox" onclick="this.parentNode.click();">Resume</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Show me more</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div id="spiral">
@@ -26,17 +47,67 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">太讚了吧</h1>
-                <p class="text-center">這是一個測試頁面。</p>
-                <p class="text-center">現在還不知道要幹麻</p>
+    <main>
+        <div class="container mt-4">
+            <div class="row">
+                <div class=" d-flex  align-items-center">
+                    <div class="col-4 ">
+                        <div class="text_berderline"></div>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="text-center my-4 mx-4">About Me</h2>
+                    </div>
+                    <div class="col-4">
+                        <div class="text_berderline"></div>
+                    </div>
+                </div>
             </div>
 
+            <div class="row">
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>個人經歷</h3>
+                            <ul>
+                                <li>2023-2024 浤鉝有限公司設備工程師</li>
+                                <li>2022 PranaQ實習生</li>
+                                <li>2019-2024 中原大學醫學工程系生醫資訊實驗室</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>紀錄</h3>
+                            <ul>
+                                <li>2023全國醫學工程專題競賽 佳作</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>Programming Skills</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>HTML/CSS</li>
+                                <li>JavaScript</li>
+                                <li>SQL</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        </section>
+    </main>
+
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 
