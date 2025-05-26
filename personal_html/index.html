@@ -6,7 +6,7 @@
     <meta name="description" content="Tai Zan The Bar - A test page for web development.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>太讚了吧taizanthebar</title>
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -14,20 +14,133 @@
 <body>
     <nav class="nav_bar">
         <div class="logo"></div>
+        <div id="menuToggle">
+            <input type="checkbox" id="menuCheckbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <a href="//taizanthebar.com">
+                        <label for="menuCheckbox" onclick="this.parentNode.click();">Home</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="//personal.taizanthebar.com">
+                        <label for="menuCheckbox" onclick="this.parentNode.click();">Resume</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Show me more</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">太讚了吧</h1>
-                <p class="text-center">這是一個測試頁面。</p>
-                <p class="text-center">現在還不知道要幹麻</p>
-            </div>
 
+    <div id="spiral">
+        <div class="main-profile">
+            <div class="profile-image"></div>
+            <div class="profile-names">
+                <h1 class="username">Cody Wu<svg class="verifiedIcon"></svg></h1>
+                <small class="page-title">TaiZanLer</small>
+                <!-- <small class="page-title">Quasi-WebDeveloper</small> -->
+            </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <main>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="social_bar ">
+                    <!-- 這裡icon內放社交連結 -->
+                    <a href="https://www.instagram.com/taizanthebar?igsh=NWFla2wxeXBiamZu&utm_source=qr"><img
+                            src="./image/icon/instagram.svg" alt="social-icon" class="social-logo"></a>
+                    <a href="https://github.com/TobyWuNumOne"><img src="./image/icon/gethub.svg" alt="social-icon"
+                            class="social-logo"></a>
+                    <a href="#"><img src="./image/icon/facebook.svg" alt="social-icon" class="social-logo"></a>
+                    <a href="//linkedin.com/in/wu-cody-6b3665357"><img src="./image/icon/linkedin.svg" alt="social-icon"
+                            class="social-logo"></a>
+                    <a href="#"><img src="./image/icon/line.svg" alt="social-icon" class="social-logo"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" d-flex  align-items-center">
+                    <div class="col-4 ">
+                        <div class="text_berderline"></div>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="text-center my-4 mx-4">簡介</h2>
+                    </div>
+                    <div class="col-4">
+                        <div class="text_berderline"></div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">
+                        我是Cody一名醫學工程系的學生，<br>對於軟體開發和醫療技術有著濃厚的興趣。<br>希望能在未來的職業生涯中，<br>結合我的專業知識和軟體技能並帶來創新和改進。
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" d-flex  align-items-center">
+                    <div class="col-4 ">
+                        <div class="text_berderline"></div>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="text-center my-4 mx-4">經歷</h2>
+                    </div>
+                    <div class="col-4">
+                        <div class="text_berderline"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>個人經歷</h3>
+                            <ul>
+                                <li>2023-2024 浤鉝有限公司設備工程師</li>
+                                <li>2022 PranaQ實習生</li>
+                                <li>2019-2024 中原大學醫學工程系生醫資訊實驗室</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>紀錄</h3>
+                            <ul>
+                                <li>2023全國醫學工程專題競賽 佳作</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-1">
+                    <div class="rain_cards">
+                        <article>
+                            <h3>Programming Skills</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>HTML/CSS</li>
+                                <li>JavaScript</li>
+                                <li>SQL</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
