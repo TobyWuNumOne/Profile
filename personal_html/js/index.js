@@ -54,3 +54,77 @@
         c.appendChild(animO);
     }
 })();
+
+window.onload = () => {
+    // Selector
+    const containers = document.querySelector(".skills-container");
+
+    // Skills Data
+    const skills = [
+        {
+            lang: " Frontend",
+            lang2: "❌尚未處理過跨瀏覽器或效能問題",
+            percent: 60
+        },
+        {
+            lang: "Backend",
+            lang2: "❌ 未處理複雜資料邏輯",
+            percent: 45
+        },
+        {
+            lang: "Database",
+            lang2: "❌ 不會設計 Key / 沒用過 ORM / Migration",
+            percent: 30
+        },
+        {
+            lang: "DevOps/部署",
+            lang2: "❌ 沒使用過部署平台 / 專案管理工具",
+            percent: 35
+        },
+        {
+            lang: "軟體設計與維護",
+            lang2: "❌ 尚未模組化 / 尚未接觸設計架構如 MVC",
+            percent: 30
+        },
+        {
+            lang: "Total Experience",
+            lang2: "綜合能力",
+            percent: 45
+        }
+    ];
+
+    // Insert Skills
+    skills.forEach(skill => {
+        let template = `
+        <div class="skill">
+        <header>
+            <p>${skill.lang}</p>
+            <p>${skill.percent}%</p>
+        </header>
+        <header>
+            <p id="lang2">${skill.lang2}</p>
+        </header>
+        <div class="progress-barr">
+            <div class="progresss" style="width:0;" id=${skill.percent}></div>
+        </div>
+        </div>
+    `;
+        containers.insertAdjacentHTML("beforeend", template);
+    });
+
+    // Animate Progress
+    document.querySelectorAll(".progresss").forEach(el => {
+        let percentage = el.id,
+            initial = 0;
+        function myLoop() {
+            setTimeout(() => {
+                if (initial < percentage) {
+                    initial++;
+                    el.style.width = `${initial}%`;
+                    myLoop();
+                }
+            }, 10);
+        }
+        myLoop();
+    });
+}

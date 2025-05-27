@@ -306,3 +306,91 @@ circle {
 *:after {
     box-sizing: border-box;
 }
+
+:root {
+    --bg: #212121;
+    --bg2: #353535;
+    --color: #f39718;
+    --color2: white;
+    --color3: #d3cdbf;
+    --color4: black;
+}
+
+
+
+
+.containers {
+    background-color: var(--bg2);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+
+}
+
+.containers h2 {
+    color: var(--color);
+    width: 40%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill {
+    margin: 0 30px 30px;
+}
+
+.skill header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: var(--color2);
+    margin: 0;
+}
+
+#lang2 {
+    color: var(--color2);
+    font-size: 13px;
+}
+
+.skill header p:last-child {
+    color: var(--color3);
+
+}
+
+.progress-barr {
+    width: 400px;
+    height: 10px;
+    background-color: var(--color4);
+    border-radius: 3px;
+}
+
+.progresss {
+    height: 100%;
+    background-color: var(--color);
+    border-radius: 3px;
+    box-shadow: 0 0 10px -1px var(--color);
+}
+
+.credits {
+    color: white;
+}
+
+/* Media Query */
+@media (max-width: 500px) {
+    .progress-barr {
+        width: 260px;
+    }
+
+    #lang2 {
+        display: none;
+    }
+}
