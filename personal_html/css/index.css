@@ -389,4 +389,8 @@ circle {
     .progress-barr {
         width: 260px;
     }
+
+    #lang2 {
+        display: none;
+    }
 }
