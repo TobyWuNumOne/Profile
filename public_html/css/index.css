@@ -230,7 +230,7 @@ footer {
 .profile-image {
     width: 120px;
     height: 120px;
-    background: url('../image/IMG_8911.JPG') center;
+    background: url('../image/IMG_1643.jpg') center;
     background-position: center 0px;
     background-size: cover;
     border-radius: 50%;
@@ -246,6 +246,15 @@ footer {
     padding: 5px 10px;
     margin-left: 24px;
 
+}
+
+.verifiedIcon {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 0;
+    width: 20px;
+    height: 20px;
+    background: url('../image/verified-badge.svg') center;
 }
 
 .username {
