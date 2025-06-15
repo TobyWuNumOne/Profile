@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一個 Chart.js 圖表</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>我的銷售數據</h1>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        // 1. 取得 canvas 元素
+        const ctx = document.getElementById('myChart');
+
+        // 2. 建立一個 Chart 物件
+        new Chart(ctx, {
+            type: 'bar', // 圖表類型：柱狀圖 (bar)
+            data: {
+                labels: ['一月', '二月', '三月', '四月', '五月'], // X 軸標籤
+                datasets: [{
+                    label: '銷售額', // 資料集的名稱
+                    data: [1200, 1900, 3000, 5000, 2300], // 實際資料
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)', // 紅色
+                        'rgba(54, 162, 235, 0.6)', // 藍色
+                        'rgba(255, 206, 86, 0.6)', // 黃色
+                        'rgba(75, 192, 192, 0.6)', // 綠色
+                        'rgba(153, 102, 255, 0.6)'  // 紫色
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1 // 邊框寬度
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Y 軸從 0 開始
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

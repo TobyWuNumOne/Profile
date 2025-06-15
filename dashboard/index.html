@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="data" herf="./data/tableConvert.com_a9nkxz.json" type="application/json" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<!-- 依下方提供的打卡資料，以Chart.js製作個人出勤儀表板，儀表板內容需包含
+
+1.總課程時數
+2.實際上課時數
+3.缺席時數
+4.遲到時數
+5.早退時數
+6.出勤比率 (attended_hours/class_hours)
+7.出席狀況圓餅圖(僅包含出席、缺席)
+8.每日上課時數折線圖
+9.每日在校時數長條圖 
+
+欄位名稱	資料型別	說明
+name	VARCHAR	姓名
+class_date	DATE	上課日期
+class_hours	FLOAT	課程時數
+*raw_hours	FLOAT	到校時間至離校時間（含午休）
+*attended_hours	FLOAT	實際上課時數（扣除午休）
+late_hours	FLOAT	遲到時間(1小時內標記遲到)
+leave_early_hours	FLOAT	早退時間(1小時內標記早退)
+absent_hours	FLOAT	缺席時數(課程時數-上課時數)
+-->
+
+<body>
+    <div class=" container">
+        <div class="row">
+            <div class="row text-center">
+                <h1>個人出勤儀表板</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-12">
+                    <div class="card mt-4">
+                        <div class="card-body total-hours">
+                            <h5 class="card-title">總課程時數</h5>
+                            <p class="card-text">x</p>
+                            <h5 class="card-title">實際上課時數</h5>
+                            <p class="card-text">x</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-12">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">出席狀況圓餅圖</h5>
+                            <canvas id="attendanceChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script>
+        // 使用 async/await 讓程式碼看起來像同步
+        async function init() {
+            let data = await getdata();
+            tltalHours(data);
+        }
+
+        // 頁面載入後執行
+        init();
+    </script>
+</body>
+
+</html>
