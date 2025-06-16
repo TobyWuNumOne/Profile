@@ -63,9 +63,7 @@ function tltalHours(fulldata) {
 
     // 更新 HTML 內容
     updateStatsDisplay(totalClassHours, totalAttendedHours, totalAbsentHours, totalLateHours, totalLeaveEarlyHours);
-
     // 建立圓餅圖
-    createPieChart(totalAttendedHours, totalAbsentHours);
 }
 
 function updateStatsDisplay(classHours, attendedHours, absentHours, lateHours, leaveEarlyHours) {
@@ -104,25 +102,33 @@ function updateStatsDisplay(classHours, attendedHours, absentHours, lateHours, l
         </div>
     `;
 }
+function count_no_show(rawHours) {
+    let attendedHours = 0;
+    let absentHours = 0;
+
+    rawHours.forEach(hours => {
+        if (hours > 0) {
+            attendedHours++;
+        }
+        absentHours++;
+    });
+
+    return [attendedHours, absentHours];
+}
 
 function createPieChart(attendedHours, absentHours) {
+    //出席狀況圓餅圖(僅包含出席、缺席)
     const ctx = document.getElementById('attendanceChart');
-
     new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['出席', '缺席'],
+            labels: ['出席天數', '缺席天數'],
             datasets: [{
-                data: [attendedHours, absentHours],
+                data: [absentHours, absentHours - attendedHours],
                 backgroundColor: [
                     'rgba(40, 167, 69, 0.8)',  // 綠色 - 出席
                     'rgba(220, 53, 69, 0.8)'   // 紅色 - 缺席
-                ],
-                borderColor: [
-                    'rgba(40, 167, 69, 1)',
-                    'rgba(220, 53, 69, 1)'
-                ],
-                borderWidth: 2
+                ]
             }]
         },
         options: {
@@ -137,6 +143,82 @@ function createPieChart(attendedHours, absentHours) {
                 },
                 legend: {
                     position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+function createLineChart(dates, hours) {
+    const ctx = document.getElementById('everydayChart');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: '每日上課時數',
+                data: hours,
+                borderColor: 'rgba(40, 167, 69, 0.8)',
+                backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: '每日上課時數折線圖',
+                    font: {
+                        size: 16
+                    }
+                },
+                legend: {
+                    position: 'bottom'
+                }
+
+            }
+        }
+    });
+}
+
+function createBarChart(dates, hours) {
+    const ctx = document.getElementById('everydayinschoolChart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: '每日在校時數',
+                data: hours,
+                backgroundColor: 'rgba(40, 167, 69, 0.8)',
+                borderColor: 'rgba(40, 167, 69, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '每日在校時數長條圖',
+                    font: {
+                        size: 16
+                    }
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
         }

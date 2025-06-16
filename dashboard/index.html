@@ -50,12 +50,22 @@ absent_hours	FLOAT	缺席時數(課程時數-上課時數)
                             <p class="card-text">x</p>
                         </div>
                     </div>
+                    <div class="card mt-4">
+                        <div class="card-body total-hours">
+                            <canvas id="everydayChart" height="300"></canvas>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-12">
                     <div class="card mt-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">出席狀況圓餅圖</h5>
-                            <canvas id="attendanceChart" width="400" height="400"></canvas>
+                            <canvas id="attendanceChart" width="300" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body total-hours">
+                            <canvas id="everydayinschoolChart" height="300"></canvas>
                         </div>
                     </div>
                 </div>
@@ -67,10 +77,16 @@ absent_hours	FLOAT	缺席時數(課程時數-上課時數)
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
     <script>
-        // 使用 async/await 讓程式碼看起來像同步
         async function init() {
             let data = await getdata();
             tltalHours(data);
+            let raw_show = count_no_show(data.rawHours);
+            //出席狀況圓餅圖(僅包含出席、缺席)
+            createPieChart(raw_show[0], raw_show[1]);
+            //每日上課時數折線圖
+            createLineChart(data.dates, data.classHours);
+            //每日在校時數長條圖
+            createBarChart(data.dates, data.rawHours);
         }
 
         // 頁面載入後執行
