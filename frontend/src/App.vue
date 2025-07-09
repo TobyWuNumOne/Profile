@@ -1,10 +1,7 @@
-<script setup>
-    import Footer from '@/components/baseic/Footer.vue';
-</script>
+<script setup></script>
 
 <template>
     <router-view />
-    <Footer />
 </template>
 
 <style scoped>
