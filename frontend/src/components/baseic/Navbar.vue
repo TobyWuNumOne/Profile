@@ -3,7 +3,10 @@
     import logo from '@/assets/logo.png';
 
     import { useTheme } from '@/composables/useTheme';
+    import { useRoute } from 'vue-router';
+
     const { theme, toggleTheme } = useTheme();
+    const route = useRoute();
 </script>
 <template>
     <nav
@@ -18,10 +21,6 @@
                 alt="Logo"
                 class="h-8 w-20 mr-2"
             />
-            <!-- site name -->
-            <span class="font-semibold text-xl tracking-tight"
-                >TaZanTheBar</span
-            >
         </div>
 
         <input class="menu-btn hidden" type="checkbox" id="menu-btn" />
@@ -38,27 +37,39 @@
             class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
         >
             <li class="border-t md:border-none">
-                <a
-                    href="/"
-                    class="block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300 font-bold"
-                    >Home</a
+                <Router-link
+                    to="/"
+                    :class="[
+                        'block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300',
+                        route.path === '/' ? 'font-bold' : ''
+                    ]"
                 >
+                    Home
+                </Router-link>
             </li>
 
             <li class="border-t md:border-none">
-                <a
-                    href="/about/"
-                    class="block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300"
-                    >About</a
+                <Router-link
+                    to="/profile"
+                    :class="[
+                        'block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300',
+                        route.path === '/profile' ? 'font-bold' : ''
+                    ]"
                 >
+                    Profile
+                </Router-link>
             </li>
 
             <li class="border-t md:border-none">
-                <a
-                    href="/blog/"
-                    class="block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300"
-                    >Blog</a
+                <Router-link
+                    to="/blog/"
+                    :class="[
+                        'block md:inline-block px-4 py-3 no-underline text-grey-darkest dark:text-white hover:text-grey-darker dark:hover:text-gray-300',
+                        route.path === '/blog/' ? 'font-bold' : ''
+                    ]"
                 >
+                    Blog
+                </Router-link>
             </li>
         </ul>
     </nav>
